@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>간단 메모장</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:24px 16px;background:#fff;color:#222;font:16px system-ui,sans-serif}main{max-width:560px;margin:auto}section,article{border:1px solid #ddd;border-radius:10px;padding:16px;margin:16px 0}h1{font-size:24px}input,textarea,button{font:inherit;max-width:100%;padding:10px;border:1px solid #bbb;border-radius:6px}input,textarea{display:block;width:100%;margin:8px 0 14px}textarea{min-height:120px;resize:vertical}button{background:#f6f6f6;cursor:pointer;margin:4px 4px 4px 0}button:disabled{opacity:.5;cursor:wait}p{overflow-wrap:anywhere}article p{white-space:pre-wrap}#status{min-height:24px;color:#444}[hidden]{display:none!important}
+</style>
+<main>
+<h1>간단 메모장</h1>
+<section id="auth">
+<form id="authForm">
+<label for="email">이메일</label><input id="email" type="email" autocomplete="username" required>
+<label for="password">비밀번호</label><input id="password" type="password" autocomplete="current-password" minlength="6" required>
+<button type="submit">로그인</button><button id="signup" type="button">회원가입</button>
+</form>
+</section>
+<section id="workspace" hidden>
+<p id="account"></p><button id="logout" type="button">로그아웃</button>
+<form id="memoForm"><label for="content">메모 내용</label><textarea id="content" required></textarea><button id="save" type="submit">저장</button></form>
+<div id="list"></div>
+</section>
+<p id="status" role="status" aria-live="polite"></p>
+</main>
+<script type="module">
+import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/+esm';
+const db=createClient('https://ttmyddqmojkpfsfksrmt.supabase.co','sb_publishable_pAELAzhTyedxb4FH9yC1NA_8iLf1lS3');
+const el=id=>document.getElementById(id);
+let user=null,busy=false,view=0;
+function status(message){el('status').textContent=message}
+function errorMessage(error){if(error.message==='Invalid login credentials')return '이메일 또는 비밀번호를 확인하세요.';return '오류: '+error.message}
+async function action(task){if(busy)return;busy=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);status('처리 중…');try{await task()}catch(error){status(errorMessage(error))}finally{busy=false;document.querySelectorAll('button').forEach(b=>b.disabled=false)}}
+async function load(){const current=view,uid=user?.id;if(!uid)return;const {data,error}=await db.from('memos').select('id,content,created_at').eq('user_id',uid).order('created_at',{ascending:false});if(current!==view)return;if(error)throw error;el('list').replaceChildren();if(!data.length){const p=document.createElement('p');p.textContent='저장된 메모가 없습니다.';el('list').append(p)}for(const memo of data){const card=document.createElement('article'),p=document.createElement('p'),button=document.createElement('button');p.textContent=memo.content;button.textContent='삭제';button.type='button';button.onclick=()=>action(async()=>{const {error}=await db.from('memos').delete().eq('id',memo.id).eq('user_id',user.id);if(error)throw error;await load();status('삭제했습니다.')});card.append(p,button);el('list').append(card)}}
+async function show(session){view++;user=session?.user??null;el('auth').hidden=!!user;el('workspace').hidden=!user;el('list').replaceChildren();el('account').textContent=user?.email??'';if(user)await load()}
+el('authForm').onsubmit=event=>{event.preventDefault();action(async()=>{const {data,error}=await db.auth.signInWithPassword({email:el('email').value.trim(),password:el('password').value});if(error)throw error;el('password').value='';await show(data.session);status('로그인했습니다.')})};
+el('signup').onclick=()=>{if(!el('authForm').reportValidity())return;action(async()=>{const {data,error}=await db.auth.signUp({email:el('email').value.trim(),password:el('password').value});if(error)throw error;if(!data.session)throw new Error('자동 로그인이 되지 않았습니다. 이메일 확인 설정을 확인하세요.');el('password').value='';await show(data.session);status('가입하고 로그인했습니다.')})};
+el('memoForm').onsubmit=event=>{event.preventDefault();const content=el('content').value.trim();if(!content){status('메모 내용을 입력하세요.');return}action(async()=>{el('save').textContent='저장 중…';try{const {error}=await db.from('memos').insert({user_id:user.id,content});if(error)throw error;el('content').value='';await load();status('저장했습니다.')}finally{el('save').textContent='저장'}})};
+el('logout').onclick=()=>action(async()=>{const {error}=await db.auth.signOut();if(error)throw error;await show(null);el('content').value='';status('로그아웃했습니다.')});
+db.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'){void show(null)}else if(event==='TOKEN_REFRESHED'){user=session?.user??null}});
+try{const {data,error}=await db.auth.getSession();if(error)throw error;await show(data.session)}catch(error){status(errorMessage(error))}
+</script>
+</html>
