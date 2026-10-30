@@ -11,34 +11,156 @@
 @media(min-width:1400px){.hero-grid{min-height:500px}}@media(max-width:800px){.wrap{width:calc(100% - 40px)}.hero-grid{gap:20px;grid-template-columns:1.15fr 1fr}.paper-scene{transform:scale(.86);margin:0 -25px}.hero-copy>p:not(.eyebrow){font-size:14px}.nav-links{gap:18px}.features{gap:20px}.feature{gap:9px}.feature-icon{width:33px;height:33px}.feature p{font-size:11px}.auth-intro,.auth-form{padding:28px}.desk{padding:48px 0}.scene-label{right:-10px}.footer-inner{align-items:flex-start}}
 @media(max-width:600px){.wrap{width:calc(100% - 36px)}.nav{height:70px;gap:12px}.brand{font-size:18px;gap:8px}.brand-icon{width:32px;height:32px;border-radius:9px}.nav-links{gap:12px;font-size:12px}.nav-links .about-link{display:none}.nav-login{padding:6px 14px}.hero-grid{display:flex;flex-direction:column;align-items:stretch;padding-top:42px;padding-bottom:24px;gap:17px}.eyebrow{margin-bottom:18px;font-size:10px}h1{font-size:40px}.hero-copy>p:not(.eyebrow){margin-bottom:23px}.hero-note{margin-top:12px}.paper-scene{min-height:285px;transform:scale(.82);margin:-6px 0 -18px}.scene-label{right:2px;bottom:3px}.hero:after{right:-360px}.features{grid-template-columns:1fr;padding:25px 0;gap:20px}.feature-icon{width:38px;height:38px}.feature{gap:13px}.feature h2{font-size:14px}.feature p{font-size:12px}.desk{padding:38px 0 45px}.desk-heading h2{font-size:25px}.desk-heading p:last-child{font-size:13px}.auth-card{grid-template-columns:1fr;border-radius:14px}.auth-intro{border-right:0;border-bottom:1px solid var(--line);padding:25px}.small-mark{display:none}.auth-intro h3{font-size:20px;line-height:1.5;margin-bottom:10px}.auth-intro h3 br{display:none}.auth-form{padding:25px}.workspace{padding:20px;border-radius:14px}.memo-list{grid-template-columns:1fr}.composer-bottom{align-items:flex-end}.composer-bottom p{max-width:155px;font-size:11px}.composer-bottom .button{min-width:88px;padding:10px 15px}.workspace-top{gap:10px}.footer-inner{flex-direction:column;gap:8px}.footer{padding:22px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+.records{padding:8px 0 65px;scroll-margin-top:28px}.records-header{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px}.records-header h2{margin:0;font-size:27px;letter-spacing:-.055em;line-height:1.5}.records-description{margin:7px 0 0;font-size:13px;color:var(--muted)}.count-badge{display:inline-flex;vertical-align:middle;align-items:center;justify-content:center;background:#e4f3fe;color:#2475aa;padding:2px 9px;min-width:29px;border-radius:20px;font-size:12px;letter-spacing:0;font-weight:650}.records-header>.button{white-space:nowrap;font-size:12px;gap:8px;padding:9px 14px;min-height:42px}.records-gate{text-align:center;padding:42px 20px;background:linear-gradient(120deg,#eff8ff,#f7fcff);border:1px dashed #c8e0f1;border-radius:16px}.records-gate>.feature-icon{margin:0 auto 17px;background:white;border:1px solid #d7e9f6}.records-gate h3{margin:0 0 9px;font-size:19px}.records-gate p{font-size:13px;color:var(--muted);margin:0 0 22px}.records-state{font-size:13px;color:#44728f;margin:0 0 18px}.records-state:empty{display:none}.records-state[data-error="true"]{padding:14px 17px;background:#fff5f3;border:1px solid #f3d9d2;border-radius:10px;color:#985044}.records-bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:17px}.records-bottom p{font-size:11px;color:#748d9f;margin:0}.empty-state a{display:inline-block;margin-top:12px;color:var(--blue);font-weight:650}.memo-list{align-items:stretch}.memo-list article{background:white;box-shadow:0 5px 22px #25598105}.memo-list article>p{max-height:400px;overflow:auto}.memo-meta time{overflow-wrap:anywhere}.nav-links{gap:25px}@media(max-width:600px){.nav-links{gap:12px}.nav-links>a:not(.nav-login){font-size:11px}.records{padding:0 0 40px}.records-header{align-items:flex-start;flex-wrap:wrap;gap:14px}.records-header h2{font-size:25px}.records-gate{padding:30px 16px}.records-description{font-size:12px}.records-bottom{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
 <a class="skip" href="#desk">메모장으로 바로가기</a>
-<header class="header"><nav class="nav wrap" aria-label="주 메뉴"><a href="#home" class="brand"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3M3 7h3M3 12h3M3 17h3"/></svg></span>간단 메모장</a><div class="nav-links"><a class="about-link" href="#about">서비스 소개</a><a href="#desk" class="nav-login" id="navAction">로그인</a></div></nav></header>
+<header class="header"><nav class="nav wrap" aria-label="주 메뉴"><a href="#home" class="brand"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3M3 7h3M3 12h3M3 17h3"/></svg></span>간단 메모장</a><div class="nav-links"><a class="about-link" href="#about">서비스 소개</a><a href="#records">저장된 기록</a><a href="#desk" class="nav-login" id="navAction">로그인</a></div></nav></header>
 <main id="home">
 <section class="hero" aria-labelledby="heroTitle"><div class="hero-grid wrap"><div class="hero-copy"><p class="eyebrow">A LITTLE SPACE FOR YOUR THOUGHTS</p><h1 id="heroTitle">생각이 머무는<br><span>작은 공간.</span></h1><p>문득 떠오른 아이디어부터 잊고 싶지 않은 순간까지.<br>복잡한 준비 없이, 나만의 메모에 가볍게 담아보세요.</p><a class="button" href="#desk">메모 시작하기 <span aria-hidden="true">↗</span></a><div class="hero-note">가볍게 적고, 언제든 다시 꺼내보세요.</div></div><div class="paper-scene" aria-label="메모 예시: 오늘의 작은 생각, 좋은 아이디어는 가볍게 적어두기"><div class="orbit"></div><div class="paper-back"></div><div class="paper"><div class="paper-date">A NOTE TO MYSELF</div><h2>오늘의 작은 생각<br>좋은 아이디어는<br>가볍게 적어두기.</h2><div class="paper-lines"><span></span><span></span><span></span></div><div class="paper-footer">메모 예시 · 간단 메모장</div></div><span class="spark" aria-hidden="true">✦</span><div class="scene-label"><span aria-hidden="true">✧</span> 생각은 가볍게, 기록은 오래.</div></div></div></section>
 <div class="wrap"><section class="features" id="about" aria-label="서비스 소개"><div class="feature"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15 4 5 5M4 20l5-1 11-11a2.1 2.1 0 0 0-4-4L5 15l-1 5Z"/></svg></span><div><h2>떠오를 때 바로</h2><p>꾸밈없이, 생각에만 집중하세요.</p></div></div><div class="feature"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18H6a4 4 0 0 1-.4-8A6.5 6.5 0 0 1 18 8a5 5 0 0 1 0 10h-1M12 20V11m-3 3 3-3 3 3"/></svg></span><div><h2>다음에도 그대로</h2><p>저장한 메모를 다시 만나보세요.</p></div></div><div class="feature"><span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v3"/></svg></span><div><h2>오직 나만의 기록</h2><p>내 메모는 내 계정에서만.</p></div></div></section>
 <section class="desk" id="desk" aria-labelledby="deskTitle"><div class="desk-heading"><p class="section-label">YOUR PERSONAL NOTEBOOK</p><h2 id="deskTitle">나만의 기록을 시작하세요</h2><p id="deskDescription">이메일로 로그인하고, 오늘의 첫 메모를 남겨보세요.</p></div>
 <div id="auth" class="auth-card"><div class="auth-intro"><div class="small-mark" aria-hidden="true">✦</div><h3>바쁜 하루 속,<br>생각을 위한 잠깐의 여유.</h3><p>할 일, 아이디어, 소소한 일상의 기록.<br>어떤 이야기든 편하게 남겨주세요.</p></div><form id="authForm" class="auth-form"><label for="email" class="field-label">이메일</label><input id="email" type="email" placeholder="you@example.com" autocomplete="username" required><label for="password" class="field-label">비밀번호</label><input id="password" type="password" placeholder="6자 이상 입력해주세요" autocomplete="current-password" minlength="6" required><div class="auth-actions"><button class="button" type="submit">로그인</button><button class="button secondary" id="signup" type="button">회원가입</button></div><p class="field-hint">처음 오셨나요? 이메일과 비밀번호를 입력하고 회원가입을 눌러주세요.</p></form></div>
-<div id="workspace" class="workspace" hidden><div class="workspace-top"><p id="account"></p><button id="logout" class="text-button" type="button">로그아웃 ↗</button></div><form id="memoForm"><label for="content" class="field-label">지금, 어떤 생각을 하고 있나요?</label><textarea id="content" placeholder="잊기 전에 가볍게 적어보세요…" required></textarea><div class="composer-bottom"><p>작은 생각도, 적어두면 소중한 기록이 돼요.</p><button class="button" id="save" type="submit">저장</button></div></form><h3 class="list-heading">차곡차곡 모인 기록</h3><div id="list" class="memo-list"></div></div><p id="status" role="status" aria-live="polite"></p>
+<div id="workspace" class="workspace" hidden><div class="workspace-top"><p id="account"></p><button id="logout" class="text-button" type="button">로그아웃 ↗</button></div><form id="memoForm"><label for="content" class="field-label">지금, 어떤 생각을 하고 있나요?</label><textarea id="content" placeholder="잊기 전에 가볍게 적어보세요…" required></textarea><div class="composer-bottom"><p>작은 생각도, 적어두면 소중한 기록이 돼요.</p><button class="button" id="save" type="submit">저장</button></div></form></div><p id="status" role="status" aria-live="polite"></p>
+</section>
+<section id="records" class="records" aria-labelledby="recordsTitle">
+<div class="records-header"><div><p class="section-label">SAVED IN YOUR NOTEBOOK</p><h2 id="recordsTitle">저장된 기록 <span id="memoCount" class="count-badge" hidden></span></h2><p class="records-description">Supabase에 보관한 내 메모를 최신순으로 확인하세요.</p></div><button type="button" id="refresh" class="button secondary" hidden>↻ 다시 불러오기</button></div>
+<div id="recordsGate" class="records-gate"><span class="feature-icon" aria-hidden="true">↗</span><h3>내 기록을 보려면 로그인하세요</h3><p>메모를 저장할 때 사용한 계정으로 로그인하면<br>다른 기기에서 남긴 기록도 확인할 수 있어요.</p><a class="button" href="#desk">로그인하고 기록 보기</a></div>
+<p id="recordsState" class="records-state" role="status" aria-live="polite"></p>
+<div id="list" class="memo-list" aria-label="내 저장 기록"></div>
+<div class="records-bottom"><p id="lastLoaded"></p><button type="button" id="loadMore" class="button secondary" hidden>기록 더 보기</button></div>
 </section></div>
 </main><footer class="footer"><div class="wrap footer-inner"><span class="footer-brand">간단 메모장</span><p>당신의 일상에, 작은 기록 하나.</p><p>© 2026 간단 메모장</p></div></footer>
 <script type="module">
+
 import {createClient} from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.1/+esm';
 const db=createClient('https://ttmyddqmojkpfsfksrmt.supabase.co','sb_publishable_pAELAzhTyedxb4FH9yC1NA_8iLf1lS3');
 const el=id=>document.getElementById(id);
-let user=null,busy=false,view=0;
+const PAGE_SIZE=20;
+let user=null,busy=false,view=0,request=0,loaded=0,total=0;
 function status(message){el('status').textContent=message}
-function errorMessage(error){if(error.message==='Invalid login credentials')return '이메일 또는 비밀번호를 확인하세요.';return '오류: '+error.message}
-async function action(task){if(busy)return;busy=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);status('처리 중…');try{await task()}catch(error){status(errorMessage(error))}finally{busy=false;document.querySelectorAll('button').forEach(b=>b.disabled=false)}}
-async function load(){const current=view,uid=user?.id;if(!uid)return;const {data,error}=await db.from('memos').select('id,content,created_at').eq('user_id',uid).order('created_at',{ascending:false});if(current!==view)return;if(error)throw error;el('list').replaceChildren();if(!data.length){const p=document.createElement('p');p.className='empty-state';p.textContent='아직 비어 있는 페이지예요. 첫 메모를 남겨보세요.';el('list').append(p)}for(const memo of data){const card=document.createElement('article'),p=document.createElement('p'),button=document.createElement('button');p.textContent=memo.content;button.textContent='삭제';button.type='button';button.onclick=()=>action(async()=>{const {error}=await db.from('memos').delete().eq('id',memo.id).eq('user_id',user.id);if(error)throw error;await load();status('삭제했습니다.')});const time=document.createElement('time');time.dateTime=memo.created_at;time.textContent=new Intl.DateTimeFormat('ko-KR',{month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(memo.created_at));const meta=document.createElement('div');meta.className='memo-meta';meta.append(time,button);card.append(p,meta);el('list').append(card)}}
-async function show(session){view++;user=session?.user??null;el('auth').hidden=!!user;el('deskTitle').textContent=user?'나의 메모 공간':'나만의 기록을 시작하세요';el('deskDescription').textContent=user?'떠오른 생각을 가볍게 적어두세요.':'이메일로 로그인하고, 오늘의 첫 메모를 남겨보세요.';el('navAction').textContent=user?'내 메모장':'로그인';el('workspace').hidden=!user;el('list').replaceChildren();el('account').textContent=user?.email??'';if(user)await load()}
-el('authForm').onsubmit=event=>{event.preventDefault();action(async()=>{const {data,error}=await db.auth.signInWithPassword({email:el('email').value.trim(),password:el('password').value});if(error)throw error;el('password').value='';await show(data.session);status('로그인했습니다.')})};
-el('signup').onclick=()=>{if(!el('authForm').reportValidity())return;action(async()=>{const {data,error}=await db.auth.signUp({email:el('email').value.trim(),password:el('password').value});if(error)throw error;if(!data.session)throw new Error('자동 로그인이 되지 않았습니다. 이메일 확인 설정을 확인하세요.');el('password').value='';await show(data.session);status('가입하고 로그인했습니다.')})};
-el('memoForm').onsubmit=event=>{event.preventDefault();const content=el('content').value.trim();if(!content){status('메모 내용을 입력하세요.');return}action(async()=>{el('save').textContent='저장 중…';try{const {error}=await db.from('memos').insert({user_id:user.id,content});if(error)throw error;el('content').value='';await load();status('저장했습니다.')}finally{el('save').textContent='저장'}})};
-el('logout').onclick=()=>action(async()=>{const {error}=await db.auth.signOut();if(error)throw error;await show(null);el('content').value='';status('로그아웃했습니다.')});
-db.auth.onAuthStateChange((event,session)=>{if(event==='SIGNED_OUT'){void show(null)}else if(event==='TOKEN_REFRESHED'){user=session?.user??null}});
+function errorMessage(error){
+ if(error.message==='Invalid login credentials')return '이메일 또는 비밀번호를 확인하세요.';
+ if(error.message==='Email not confirmed')return '가입 이메일의 확인 링크를 누른 후 로그인해주세요.';
+ if(error.message?.includes('Failed to fetch'))return '인터넷 연결을 확인하고 다시 시도해주세요.';
+ return '오류: '+error.message;
+}
+async function action(task){
+ if(busy)return;
+ busy=true;document.querySelectorAll('button').forEach(b=>b.disabled=true);
+ status('처리 중…');
+ try{await task()}catch(error){status(errorMessage(error))}
+ finally{busy=false;document.querySelectorAll('button').forEach(b=>b.disabled=false)}
+}
+function renderMemo(memo){
+ const card=document.createElement('article'),p=document.createElement('p');
+ p.textContent=memo.content;
+ const time=document.createElement('time');time.dateTime=memo.created_at;
+ time.textContent=new Intl.DateTimeFormat('ko-KR',{year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(memo.created_at));
+ const button=document.createElement('button');button.type='button';button.textContent='삭제';button.setAttribute('aria-label',time.textContent+' 메모 삭제');
+ button.onclick=()=>action(async()=>{
+  const {error}=await db.from('memos').delete().eq('id',memo.id).eq('user_id',user.id);
+  if(error)throw error;
+  await load();status('삭제했습니다.');
+ });
+ const meta=document.createElement('div');meta.className='memo-meta';meta.append(time,button);card.append(p,meta);return card;
+}
+async function load(append=false){
+ const uid=user?.id;if(!uid)return false;
+ const current=view,serial=++request,offset=append?loaded:0;
+ el('recordsState').textContent='저장된 기록을 불러오는 중…';
+ el('recordsState').dataset.error='false';el('list').setAttribute('aria-busy','true');
+ el('loadMore').hidden=true;
+ try{
+  const {data,error,count}=await db.from('memos')
+   .select('id,content,created_at',{count:'exact'}).eq('user_id',uid)
+   .order('created_at',{ascending:false}).order('id',{ascending:false})
+   .range(offset,offset+PAGE_SIZE-1);
+  if(current!==view||serial!==request)return false;
+  if(error)throw error;
+  if(!append)el('list').replaceChildren();
+  total=count??data.length;loaded=offset+data.length;
+  for(const memo of data)el('list').append(renderMemo(memo));
+  el('memoCount').textContent=String(total);el('memoCount').hidden=false;
+  if(total===0){
+   const empty=document.createElement('div');empty.className='empty-state';
+   const p=document.createElement('p');p.textContent='아직 저장된 기록이 없습니다.';
+   const a=document.createElement('a');a.href='#desk';a.textContent='첫 메모 작성하기 ↗';
+   empty.append(p,a);el('list').append(empty);
+  }
+  el('recordsState').textContent=total?'내 기록 '+total+'개 중 '+loaded+'개를 불러왔습니다.':'메모를 저장하면 여기에 표시됩니다.';
+  el('lastLoaded').textContent='마지막 조회 · '+new Intl.DateTimeFormat('ko-KR',{hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date());
+  el('loadMore').hidden=loaded>=total;
+  return true;
+ }catch(error){
+  if(current!==view||serial!==request)return false;
+  el('recordsState').textContent='기록을 불러오지 못했습니다. '+errorMessage(error)+' 위의 다시 불러오기를 눌러주세요.';
+  el('recordsState').dataset.error='true';
+  if(!append)el('memoCount').hidden=true;
+  el('loadMore').hidden=!append||loaded>=total;
+  return false;
+ }finally{
+  if(current===view&&serial===request)el('list').setAttribute('aria-busy','false');
+ }
+}
+async function show(session){
+ view++;request++;user=session?.user??null;loaded=0;total=0;
+ el('auth').hidden=!!user;el('workspace').hidden=!user;el('recordsGate').hidden=!!user;el('refresh').hidden=!user;
+ el('deskTitle').textContent=user?'나의 메모 공간':'나만의 기록을 시작하세요';
+ el('deskDescription').textContent=user?'떠오른 생각을 가볍게 적어두세요.':'이메일로 로그인하고, 오늘의 첫 메모를 남겨보세요.';
+ el('navAction').textContent=user?'내 메모장':'로그인';
+ el('account').textContent=user?.email??'';
+ el('list').replaceChildren();el('list').setAttribute('aria-busy','false');
+ el('memoCount').hidden=true;el('loadMore').hidden=true;
+ el('recordsState').textContent='';el('lastLoaded').textContent='';
+ if(user)await load();
+}
+el('authForm').onsubmit=event=>{
+ event.preventDefault();action(async()=>{
+  const {data,error}=await db.auth.signInWithPassword({email:el('email').value.trim(),password:el('password').value});
+  if(error)throw error;el('password').value='';
+  await show(data.session);status('로그인했습니다. 아래에서 저장된 기록을 확인하세요.');
+  el('records').scrollIntoView({behavior:'smooth',block:'start'});
+ });
+};
+el('signup').onclick=()=>{
+ if(!el('authForm').reportValidity())return;
+ action(async()=>{
+  const {data,error}=await db.auth.signUp({email:el('email').value.trim(),password:el('password').value});
+  if(error)throw error;el('password').value='';
+  if(!data.session){status('가입 이메일의 확인 링크를 누른 뒤 로그인해주세요.');return}
+  await show(data.session);status('가입하고 로그인했습니다.');
+ });
+};
+el('memoForm').onsubmit=event=>{
+ event.preventDefault();const content=el('content').value.trim();
+ if(!content){status('메모 내용을 입력하세요.');return}
+ action(async()=>{
+  if(!user)throw new Error('로그인이 필요합니다.');
+  el('save').textContent='저장 중…';
+  try{
+   const {error}=await db.from('memos').insert({user_id:user.id,content});
+   if(error)throw error;
+   el('content').value='';
+   const ok=await load();
+   status(ok?'저장했습니다. 저장된 기록에서 확인하세요.':'저장은 완료했습니다. 기록 목록은 다시 불러와주세요.');
+  }finally{el('save').textContent='저장'}
+ });
+};
+el('refresh').onclick=()=>action(async()=>{const ok=await load();status(ok?'최신 기록을 불러왔습니다.':'기록 영역의 오류 안내를 확인해주세요.')});
+el('loadMore').onclick=()=>action(async()=>{const ok=await load(true);status(ok?'다음 기록을 불러왔습니다.':'기록 영역의 오류 안내를 확인해주세요.')});
+el('logout').onclick=()=>action(async()=>{
+ const {error}=await db.auth.signOut();if(error)throw error;
+ await show(null);el('content').value='';status('로그아웃했습니다.');
+});
+db.auth.onAuthStateChange((event,session)=>{
+ if(['SIGNED_IN','SIGNED_OUT','TOKEN_REFRESHED'].includes(event)){
+  setTimeout(()=>{
+   if((session?.user?.id??null)!==(user?.id??null))show(session).catch(error=>status(errorMessage(error)));
+  },0);
+ }
+});
 try{const {data,error}=await db.auth.getSession();if(error)throw error;await show(data.session)}catch(error){status(errorMessage(error))}
 </script>
 </body>
